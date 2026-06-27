@@ -1,0 +1,16 @@
+{
+  "name": "orders-sink",
+  "config": {
+    "connector.class": "io.confluent.connect.jdbc.JdbcSinkConnector",
+    "connection.url": "jdbc:postgresql://postgres-target:5432/targetdb",
+    "connection.user": "postgres",
+    "connection.password": "postgres",
+    "topics": "shop.public.orders",
+    "table.name.format": "orders",
+    "insert.mode": "upsert",
+    "pk.mode": "record_key",
+    "pk.fields": "id",
+    "auto.create": "true",
+    "auto.evolve": "true"
+  }
+}
